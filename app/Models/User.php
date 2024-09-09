@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'role'
     ];
 
     /**
@@ -42,4 +43,14 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function is_sa(){
+        return $this->role == 2;
+    }
+
+    public function is_showDevice(){
+        return $this->role == 3;
+    }
+
 }
+    
